@@ -5,8 +5,7 @@ docker-compose up -d
 ```
 ## Команды для запуска миграций
 ```
-make migrate-postgres
-make migrate-clickhouse
+make migrate-up
 ```
 ## Swagger документация по роуту
 ```
