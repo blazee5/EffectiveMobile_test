@@ -7,6 +7,11 @@ import (
 	"log"
 )
 
+// @title EffectiveMobile Test API
+// @description This is a sample server for a car service.
+// @version 1.0
+// @host localhost:3000
+// @BasePath /api/v1
 func main() {
 	err := godotenv.Load()
 

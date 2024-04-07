@@ -2,9 +2,12 @@ package handler
 
 import (
 	"context"
+	_ "github.com/blazee5/EffectiveMobile_test/docs"
 	"github.com/blazee5/EffectiveMobile_test/internal/service"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"go.uber.org/zap"
 	"net/http"
 	"os"
@@ -49,6 +52,8 @@ func (s *Server) InitRoutes() *gin.Engine {
 		car.PUT("/:id", s.UpdateCar)
 		car.DELETE("/:id", s.DeleteCar)
 	}
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return r
 }
